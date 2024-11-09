@@ -3,60 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>Predicciones Atmosféricas y Boletín Diario</title>
     <style>
-        /* Estilos básicos para la página */
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset básico */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
 
-        /* Estilo del encabezado */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Encabezado */
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #3b82f6;
+            color: white;
             padding: 20px;
             text-align: center;
         }
 
-        /* Estilo de la barra de navegación */
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #444;
+        header h1 {
+            font-size: 2.5rem;
         }
-        
+
+        /* Barra de navegación */
+        nav {
+            background-color: #1e40af;
+            padding: 10px;
+            text-align: center;
+        }
+
         nav a {
             color: white;
-            padding: 14px 20px;
+            margin: 0 15px;
             text-decoration: none;
-            text-align: center;
+            font-size: 1.1rem;
         }
 
         nav a:hover {
-            background-color: #555;
+            background-color: #2563eb;
+            padding: 5px;
         }
 
-        /* Estilos para el contenido principal */
+        /* Contenedor principal */
         .container {
             padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        h1, h2 {
-            color: #333;
+        .content {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
         }
 
-        p {
-            color: #666;
+        .forecast, .daily-bulletin {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            flex: 1;
+        }
+
+        .forecast h2, .daily-bulletin h2 {
+            margin-bottom: 20px;
+            color: #1e40af;
+        }
+
+        .forecast p, .daily-bulletin p {
             line-height: 1.6;
         }
 
-        /* Estilo del pie de página */
+        .forecast .temperature {
+            font-size: 2rem;
+            color: #f97316;
+            margin-top: 10px;
+        }
+
+        /* Estilo de formulario para suscripción al boletín */
+        .subscription {
+            background-color: #1e40af;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .subscription input[type="email"] {
+            padding: 10px;
+            width: 60%;
+            border-radius: 4px;
+            border: none;
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+
+        .subscription button {
+            padding: 10px 20px;
+            background-color: #3b82f6;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .subscription button:hover {
+            background-color: #2563eb;
+        }
+
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: #1e40af;
+            color: white;
             text-align: center;
             padding: 10px;
             position: fixed;
@@ -67,46 +131,57 @@
 </head>
 <body>
 
-    <!-- Encabezado de la página -->
+    <!-- Encabezado -->
     <header>
-        <h1>Bienvenidos a Mi Página Web</h1>
-        <p>Tu sitio de información y entretenimiento</p>
+        <h1>Predicciones Atmosféricas y Boletín Diario</h1>
     </header>
 
     <!-- Barra de navegación -->
     <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#sobre-nosotros">Sobre Nosotros</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#forecast">Pronóstico del Tiempo</a>
+        <a href="#daily-bulletin">Boletín Diario</a>
+        <a href="#subscribe">Suscripción</a>
     </nav>
 
-    <!-- Contenido principal -->
+    <!-- Contenedor principal -->
     <div class="container">
-        <section id="inicio">
-            <h2>Inicio</h2>
-            <p>Bienvenido a nuestro sitio web. Aquí encontrarás todo lo que necesitas saber sobre nosotros y los servicios que ofrecemos. Navega por las secciones para descubrir más.</p>
-        </section>
 
-        <section id="sobre-nosotros">
-            <h2>Sobre Nosotros</h2>
-            <p>Somos una empresa dedicada a ofrecer servicios de calidad a nuestros clientes. Nos especializamos en diversas áreas y nuestro objetivo es satisfacer tus necesidades.</p>
-        </section>
+        <!-- Sección Pronóstico del Tiempo -->
+        <div id="forecast" class="content">
+            <div class="forecast">
+                <h2>Pronóstico del Tiempo</h2>
+                <p>El pronóstico del tiempo para hoy muestra cielos despejados con un clima cálido. Se espera que la temperatura máxima alcance los <strong>28°C</strong>.</p>
+                <p class="temperature">Temperatura actual: <strong>23°C</strong></p>
+                <p><strong>Viento:</strong> 15 km/h, dirección noreste</p>
+                <p><strong>Humedad:</strong> 60%</p>
+            </div>
+        </div>
 
-        <section id="servicios">
-            <h2>Servicios</h2>
-            <p>Ofrecemos una amplia variedad de servicios para ayudar a nuestros clientes a alcanzar sus objetivos. Desde consultoría hasta desarrollo personalizado.</p>
-        </section>
+        <!-- Sección Boletín Diario -->
+        <div id="daily-bulletin" class="content">
+            <div class="daily-bulletin">
+                <h2>Boletín Diario</h2>
+                <p>El día de hoy será ideal para disfrutar de actividades al aire libre. Sin embargo, se recomienda tomar precauciones por la exposición al sol debido a los niveles altos de radiación UV.</p>
+                <p><strong>Consejos:</strong> Mantén una botella de agua a mano y protégete del sol usando bloqueador solar.</p>
+                <p><strong>Eventos:</strong> Conciertos y actividades al aire libre programadas para hoy en la ciudad. ¡Aprovecha el buen clima!</p>
+            </div>
+        </div>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>¿Tienes preguntas? ¡Contáctanos! Estaremos encantados de ayudarte.</p>
-        </section>
+        <!-- Sección de Suscripción al Boletín Diario -->
+        <div id="subscribe" class="subscription">
+            <h2>Recibe las Predicciones Diarias</h2>
+            <p>Suscríbete a nuestro boletín para recibir las predicciones meteorológicas y noticias del día directamente en tu correo.</p>
+            <form action="https://example.com/subscribe" method="POST">
+                <input type="email" name="email" placeholder="Introduce tu correo electrónico" required>
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+
     </div>
 
     <!-- Pie de página -->
     <footer>
-        <p>&copy; 2023 Mi Página Web. Todos los derechos reservados.</p>
+        <p>&copy; 2023 Predicciones y Boletines. Todos los derechos reservados.</p>
     </footer>
 
 </body>
